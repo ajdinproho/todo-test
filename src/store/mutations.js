@@ -9,7 +9,6 @@ export default{
         var todos = state.todos
         todos.splice(todos.indexOf(todo), 1)
         state.todos = todos
-        state.newTodo = todo.name
     },
     REMOVE_TODO(state, todo){
         var todos = state.todos
@@ -22,7 +21,7 @@ export default{
     REMOVE_ALLTODOS(state){
         state.doneTodos.length = 0;
         state.doneTodos = []
-    },
+    }, 
     COMPLETE_TODO(state,{todo,index}){
         todo.completed = true;
         state.doneTodos.push(todo);
@@ -46,5 +45,10 @@ export default{
     },
     UPDATE_DONETODOS(state,value){
      state.doneTodos = value;   
-    }
+    },
+    MOVE_TOTODO(state,{todo,index}){
+        todo.completed = false;
+        state.todos.push(todo);
+        state.doneTodos.splice(index,1);
+    },  
 }

@@ -31,5 +31,11 @@ export default{
     },
     clearTodo({commit}){
         commit('CLEAR_TODO')
+    },
+    moveToTodo({commit}, {todo,index}){
+        commit('MOVE_TOTODO', {
+            todo,
+            index
+        })
     }
 }

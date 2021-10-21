@@ -4,7 +4,7 @@
                 <p>To Do</p> 
                 <i class="material-icons" id="add-box" @click="addTodo" title="Add todo">add_box</i>
              </div><br/>
-            <input  v-model="newTodo" v-on:keyup.enter="addTodo" v-if="displayInput"  ref="inputF" class="input-todo"><!---->
+                <input v-model="newTodo" v-on:keyup.enter="addTodo" v-if="displayInput" ref="inputF" class="input-todo">
             <draggable
             id="first"
             :list="todos"
@@ -14,11 +14,10 @@
             <div class="todos-group-item item" v-for="(todo, index) in todos" :key="todo.name">
                 <div class="todo-text">  
                     <input type="checkbox" class="checkbox" @click="complete(todo,index)"> 
-                    <div @click="edit(todo)">
+                    <div @click="edit(todo)" class="todo-name">
                         {{todo.name}}
                     </div>
-                    <div>
-                       <!-- <i class="material-icons" id="edit" title="Edit" @click="edit(todo)">edit</i>   -->
+                    <div> 
                         <i class="material-icons" id="delete" title="Remove" @click="remove(todo)">delete</i>
                     </div>
                         
@@ -34,7 +33,6 @@ import draggable from 'vuedraggable'
             return{
                 newTodo: '',
                 displayInput:false,
-                isEditing:false,
             }
         },
         components:{
@@ -56,6 +54,7 @@ import draggable from 'vuedraggable'
             },
             edit(todo){
                 this.displayInput = true;
+                this.newTodo = todo.name;
                 this.$store.dispatch('editTodo', todo);
                 this.$nextTick(() =>{
                     this.$refs.inputF.focus()
@@ -70,18 +69,8 @@ import draggable from 'vuedraggable'
             remove(todo){
                 this.$store.dispatch('removeTodo', todo)
             },
-            editOnClick(){
-                this.isEditing = true;
-
-            }
         },
         computed: {
-           /*newTodo(){
-                return this.$store.getters.newTodo
-            },*/
-            /*todos(){
-                return this.$store.getters.todos
-            },*/
            todos:{
                 get(){
                 return this.$store.getters.todos
@@ -97,8 +86,8 @@ import draggable from 'vuedraggable'
 <style>
 .flexbox-todolist{
     border:1px solid black;
-    width: 100vw;
-    max-width: 554px;
+    flex:1;
+    max-width:554px;
     background-color: #FFFFFF;
     padding: 20px 15px;
     margin: 10px 10px;
@@ -116,17 +105,21 @@ import draggable from 'vuedraggable'
 #add-box{
     cursor:pointer;
 }
-#edit{
-    cursor:pointer;
-}
 #delete{
     cursor:pointer;
 }
 .input-todo{
-    width:310px;
+    flex:1;
+    width:480px;
     margin-left:20px;
     border:none;
     height:20px;
+    outline: 0;
+    font-size: 14px;
+    font-family: Roboto;
+}
+.input-todo:hover{
+    background-color: #F1F1F1;
 }
 .checkbox{
     width:24px;
@@ -142,6 +135,14 @@ import draggable from 'vuedraggable'
     color:#222222;
     display: flex;
     align-items:center;
-    padding: 10px 20px;
+    padding: 5px 15px;
 }
+.todo-text:hover{
+    background-color: #F1F1F1;
+    cursor:pointer;
+}
+.todo-name{
+    flex:1;
+}
+
 </style>

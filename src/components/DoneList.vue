@@ -8,8 +8,7 @@
         title="Delete all"
         @click="removeAllTodos"
       >
-        delete_sweep</i
-      >
+        delete_sweep</i>
     </div>
     <draggable
       :list="doneTodos"
@@ -19,14 +18,14 @@
     >
       <div
         class="todos-group-item item"
-        v-for="todo in doneTodos"
-        :key="todo.name"
-      >
+        v-for="(todo,index) in doneTodos"
+        :key="todo.name">
         <div class="done-todo-text">
-          <input type="checkbox" class="checkbox" checked /> {{ todo.name }}
-          <i class="material-icons" id="delete_sweeep" @click="remove(todo)"
-            >delete</i
-          >
+              <input type="checkbox" class="checkbox" checked @click="moveToTodo(todo,index)"/> 
+                <div class="todo-name">
+                      {{ todo.name }}
+                 </div>
+                <i class="material-icons" id="delete_sweeep" @click="remove(todo)">delete</i>
         </div>
       </div>
     </draggable>
@@ -46,6 +45,12 @@ export default {
     removeAllTodos() {
       this.$store.dispatch("removeAllTodos");
     },
+    moveToTodo(todo,index){
+      this.$store.dispatch('moveToTodo', {
+        todo,
+        index
+      }); 
+    }
   },
   computed: {
     doneTodos: {
@@ -62,7 +67,7 @@ export default {
 <style>
 .flexbox-donelist {
   border: 1px solid black;
-  width: 100vw;
+  flex:1;
   max-width: 554px;
   background-color: #ffffff;
   padding: 20px 15px;
@@ -88,7 +93,12 @@ export default {
   color: #222222;
   display: flex;
   align-items: center;
-  padding: 10px 20px;
+  padding: 5px 15px;
   cursor: pointer;
+  margin-top: 10px;
 }
+.done-todo-text:hover{
+  background-color: #F1F1F1;
+}
+
 </style>

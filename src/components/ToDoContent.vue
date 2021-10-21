@@ -1,9 +1,7 @@
 <template>
     <div class="flexbox">
-         <ToDoList />
-        
-            <DoneList></DoneList>
-            
+        <ToDoList />
+        <DoneList />     
     </div> 
     
 </template>
