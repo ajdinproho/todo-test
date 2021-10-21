@@ -39,13 +39,13 @@ export default {
 }
 #todobox-text{
     color:white;
-    font-family: Roboto;
+    font-family: Roboto, sans-serif;
     font-weight: bold;
     font-size: 16px;
 }
 #username-text{
     color:white;
-    font-family: Roboto;
+    font-family: Roboto, sans-serif;
     font-size:14px;
     margin-left:900px;
 }

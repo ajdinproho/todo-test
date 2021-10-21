@@ -20,7 +20,6 @@
                     <div> 
                         <i class="material-icons" id="delete" title="Remove" @click="remove(todo)">delete</i>
                     </div>
-                        
                 </div>
             </div>            
             </draggable>
@@ -94,7 +93,7 @@ import draggable from 'vuedraggable'
 }
 .box-header{
     font-size:16px;
-    font-family: Roboto;
+    font-family: Roboto, sans-serif;
     text-align: left;
     font-weight: bold;
     display:flex;
@@ -116,7 +115,7 @@ import draggable from 'vuedraggable'
     height:20px;
     outline: 0;
     font-size: 14px;
-    font-family: Roboto;
+    font-family: Roboto, sans-serif;
 }
 .input-todo:hover{
     background-color: #F1F1F1;
@@ -130,7 +129,7 @@ import draggable from 'vuedraggable'
 }
 .todo-text{
     font-size:14px;
-    font-family: Roboto;
+    font-family: Roboto, sans-serif;
     text-align: left;
     color:#222222;
     display: flex;
@@ -144,5 +143,4 @@ import draggable from 'vuedraggable'
 .todo-name{
     flex:1;
 }
-
 </style>

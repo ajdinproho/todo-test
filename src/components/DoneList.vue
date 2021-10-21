@@ -78,7 +78,7 @@ export default {
 }
 .box-donelist-header {
   font-size: 16px;
-  font-family: Roboto;
+  font-family: Roboto, sans-serif;
   text-align: left;
   font-weight: bold;
   display: flex;
@@ -88,7 +88,7 @@ export default {
 }
 .done-todo-text {
   font-size: 14px;
-  font-family: Roboto;
+  font-family: Roboto, sans-serif;
   text-align: left;
   color: #222222;
   display: flex;

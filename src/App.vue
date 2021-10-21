@@ -45,12 +45,12 @@ background-color: #F1F1F1;
   margin-left: 14.85%;
 }
 .home-text p:nth-child(1){
-  font-family: Roboto;
+  font-family: Roboto, sans-serif;
   font-weight: bold;
   font-size: 48px;
 }
 .home-text p:nth-child(2){
-  font-family: Roboto;
+  font-family: Roboto, sans-serif;
   font-size: 16px;
 }
 .logo2{

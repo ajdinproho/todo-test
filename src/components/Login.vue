@@ -102,7 +102,7 @@ export default {
 .login-button{
     background-color: #425BD9;
     color: white;
-    font-family: Roboto;
+    font-family: Roboto, sans-serif;
     font-size: 16px;
     width: 312px;
     height: 40px;
@@ -116,7 +116,7 @@ export default {
 .bottom-box{
     display: flex;
     align-items: center;
-    font-family: Roboto;
+    font-family: Roboto, sans-serif;
 }
 .forgot{
     text-decoration: none;
