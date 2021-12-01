@@ -11,13 +11,14 @@
   "dependencies": {
     "@fontsource/roboto": "^4.5.1",
     "@syncfusion/ej2-vue-dropdowns": "^19.3.46",
+    "ansi-html-community": "^0.0.8",
     "core-js": "^3.6.5",
+    "smtp-tester": "^1.2.0",
     "vue": "^2.6.11",
     "vue-material-design-icons": "^4.13.0",
     "vue-router": "^3.5.2",
     "vuedraggable": "^2.24.3",
-    "vuex": "^3.6.2",
-    "ansi-html-community": "^0.0.8"
+    "vuex": "^3.6.2"
   },
   "devDependencies": {
     "@4tw/cypress-drag-drop": "^2.0.0",
